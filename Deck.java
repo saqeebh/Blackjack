@@ -51,7 +51,7 @@ public class Deck {
 	public Card dealCard() {
 		Random random = new Random();
 		if (this.sizeOf() > 1) {
-			int cardNum = random.nextInt(this.sizeOf() - 1) + 1;
+			int cardNum = random.nextInt(this.sizeOf());
 			Card cardDealt = this.deck.get(cardNum);
 			this.deck.remove(cardNum);
 			return cardDealt;
