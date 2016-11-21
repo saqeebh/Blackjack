@@ -31,10 +31,12 @@ public class Deck {
 	public String toString() {
 		
 		String output = "";
-		for (int i = 0; i < deck.size(); i++){
-			output = output + Integer.toString(deck.get(i).getRank()) + " of " + 
-					deck.get(i).getSuit() + "(" + deck.get(i).getValue() + ")\n";
-		}
+		if (deck.size() > 0) {
+			for (int i = 0; i < deck.size(); i++){
+				output = output + Integer.toString(deck.get(i).getRank()) + " of " + 
+						deck.get(i).getSuit() + "(" + deck.get(i).getValue() + ")\n";
+			}
+		} else return "Deck is empty";
 		
 		return output;
 		
@@ -48,10 +50,16 @@ public class Deck {
 	// Return a random Card object from the deck, removing that card from the deck
 	public Card dealCard() {
 		Random random = new Random();
-		int cardNum = random.nextInt(this.sizeOf() - 1) + 1;
-		Card cardDealt = this.deck.get(cardNum);
-		this.deck.remove(cardNum);
-		return cardDealt;
+		if (this.sizeOf() > 1) {
+			int cardNum = random.nextInt(this.sizeOf() - 1) + 1;
+			Card cardDealt = this.deck.get(cardNum);
+			this.deck.remove(cardNum);
+			return cardDealt;
+		} else {
+			Card cardDealt = this.deck.get(0);
+			this.deck.remove(0);
+			return cardDealt;
+		}
 		
 	}
 	
