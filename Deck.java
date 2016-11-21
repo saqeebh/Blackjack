@@ -45,4 +45,14 @@ public class Deck {
 		return deck.size();
 	}
 	
+	// Return a random Card object from the deck, removing that card from the deck
+	public Card dealCard() {
+		Random random = new Random();
+		int cardNum = random.nextInt(this.sizeOf() - 1) + 1;
+		Card cardDealt = this.deck.get(cardNum);
+		this.deck.remove(cardNum);
+		return cardDealt;
+		
+	}
+	
 }

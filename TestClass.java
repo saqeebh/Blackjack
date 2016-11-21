@@ -11,6 +11,12 @@ public class TestClass {
 		Deck deck = new Deck();
 		System.out.println(deck.toString());
 		System.out.println(deck.sizeOf());
+		
+		System.out.println(deck.dealCard());
+		System.out.println(deck.dealCard());
+		System.out.println(deck.dealCard());
+		
+		System.out.println(deck.toString());
 
 	}
 
