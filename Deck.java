@@ -33,7 +33,7 @@ public class Deck {
 		String output = "";
 		for (int i = 0; i < deck.size(); i++){
 			output = output + Integer.toString(deck.get(i).getRank()) + " of " + 
-					deck.get(i).getSuit() + "\n";
+					deck.get(i).getSuit() + "(" + deck.get(i).getValue() + ")\n";
 		}
 		
 		return output;

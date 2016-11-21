@@ -1,6 +1,7 @@
 
 public class Card {
 	private int rank;
+	private int value;
 	private String suit;
 	
 	// Constructor
@@ -8,6 +9,9 @@ public class Card {
 		
 		this.rank = rank;
 		this.suit = suit;
+		if (rank <= 10) this.value = rank;
+		else if (rank > 10 && rank < 14) this.value = 10;
+		else if (rank == 14) this.value = 11;
 		
 	}
 	
@@ -31,9 +35,19 @@ public class Card {
 		this.suit = suit;
 	}
 	
+	// Value getter
+	public int getValue() {
+		return this.value;
+	}
+	
+	// Value setter
+	public void setValue(int value) {
+		this.value = value;
+	}
+	
 	// Override toString
 	public String toString() {
-		return Integer.toString(this.rank) + " of " + this.suit;
+		return Integer.toString(this.rank) + " of " + this.suit + "(" + this.value + ")";
 	}
 
 }
