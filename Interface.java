@@ -85,6 +85,7 @@ public class Interface extends JFrame {
 			
 			if(e.getSource() == jbtQuit) {
 				System.out.println("QUIT button clicked\n");
+				System.exit(0);
 				// TODO: Implement button actions
 				
 			}
